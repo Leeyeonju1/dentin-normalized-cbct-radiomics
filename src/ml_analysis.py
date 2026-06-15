@@ -15,7 +15,6 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 from sklearn.base import BaseEstimator
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
@@ -284,16 +283,6 @@ def get_model_and_param_space(
             "clf__l1_ratio": np.linspace(0.0, 1.0, 6),
             "clf__class_weight": class_weight_options,
         }
-    elif model_name == "random_forest":
-        classifier = RandomForestClassifier(random_state=random_state, n_jobs=-1)
-        param_space = {
-            "clf__n_estimators": [100, 200, 500],
-            "clf__max_depth": [2, 3, 5, None],
-            "clf__min_samples_split": [2, 5, 10],
-            "clf__min_samples_leaf": [1, 2, 4],
-            "clf__max_features": ["sqrt", "log2", None],
-            "clf__class_weight": class_weight_options,
-        }
     elif model_name == "xgboost":
         if not XGBOOST_AVAILABLE:
             raise ImportError("xgboost is not installed.")
@@ -548,7 +537,7 @@ def run_all_experiments(
     feature_sets = build_feature_sets(list(X_norm.columns))
 
     if model_names is None:
-        model_names = ["logistic_regression", "random_forest"]
+        model_names = ["logistic_regression"]
         if XGBOOST_AVAILABLE:
             model_names.append("xgboost")
 
