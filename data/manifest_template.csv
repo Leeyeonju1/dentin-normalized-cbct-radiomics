@@ -1,0 +1,3 @@
+case_id,image_path,label_path,reference_cohort,diagnosis
+example_001,/path/to/example_001_img.nii.gz,/path/to/example_001_label.nii.gz,1,granuloma
+example_002,/path/to/example_002_img.nii.gz,/path/to/example_002_label.nii.gz,0,cyst

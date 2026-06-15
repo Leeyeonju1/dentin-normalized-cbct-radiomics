@@ -1,0 +1,17 @@
+imageType:
+  Original: {}
+
+featureClass:
+  shape: []
+  firstorder: []
+  glcm: []
+  glrlm: []
+  glszm: []
+  gldm: []
+  ngtdm: []
+
+setting:
+  binWidth: 100
+  label: 1
+  correctMask: true
+  force2D: false
