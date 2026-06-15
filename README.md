@@ -55,6 +55,6 @@ The machine-learning code uses:
 - The dentin reference cohort should be fixed before model evaluation and should not be selected using diagnosis labels or model outcomes.
 - PyRadiomics images and masks are read with SimpleITK to preserve voxel spacing and image metadata.
 - No missing-value imputation is applied. Missing feature values are treated as a preprocessing error.
-- Feature screening follows the manuscript-described procedure: Levene's test, followed by Student or Welch two-sample t-test, with feature retention at `p < 0.05`.
+- Feature screening follows the procedure: Levene's test, followed by Student or Welch two-sample t-test, with feature retention at `p < 0.05`.
 - Feature screening, scaling, SMOTE, and hyperparameter tuning are performed inside training folds to avoid leakage.
 - PyRadiomics discretization is set to `binWidth: 100`, matching the original analysis notebook setting. Change this only if the manuscript reports a different bin width.
